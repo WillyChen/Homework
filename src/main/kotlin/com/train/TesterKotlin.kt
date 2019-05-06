@@ -4,16 +4,26 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
-    val scanner = Scanner(System.`in`)
-    print("Please enter number of tickets:")
-    val ticketCount = scanner.nextInt()
-    print("How many round-trip tickets:")
-    val roundTrip = scanner.nextInt()
+//    val scanner = Scanner(System.`in`)
+    var ticketCount = 0
 
-    val ticket = TicketKotlin(ticketCount,roundTrip)
+    while (ticketCount != -1) {
+        print("Please enter number of tickets:")
+        ticketCount = readLine()!!.toInt() //scanner.nextInt()
+        if (ticketCount == -1) {
+           println("Exit")
+        }
+        else {
+            print("How many round-trip tickets:")
+            val roundTrip = readLine()!!.toInt()//scanner.nextInt()
 
-    println("Total Tickets: $ticketCount \n Round-trip: $roundTrip \n Total: ${ticket.getSum()}")
+            val ticket = TicketKotlin(ticketCount,roundTrip)
 
+            println("Total Tickets: $ticketCount \n Round-trip: $roundTrip \n Total: ${ticket.getSum()}")
+
+        }
+
+    }
 
 }
 
